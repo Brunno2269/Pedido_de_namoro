@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer me namorar?</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicionando o manifesto -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Cor do tema para navegadores móveis -->
+    <meta name="theme-color" content="#4CAF50">
+    <!-- Ícone para a tela inicial -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png">
+    <!-- iOS específico -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-192x192.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Quer me namorar?</h1>
+        <div class="buttons">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+        </div>
+        <p id="mensagem"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log('Service Worker registrado com sucesso!'))
+                .catch((error) => console.log('Erro ao registrar Service Worker:', error));
+        }
+    </script>
+</body>
+</html>
